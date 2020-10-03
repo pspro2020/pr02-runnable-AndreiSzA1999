@@ -1,10 +1,24 @@
-public class Potencias {
+public class Potencias implements Runnable{
 
 
-        public static void main (String[] args){
+    private final int numero;
 
-    System.out.println("Hola");
 
+    public Potencias(int numero) {
+        this.numero = numero;
+    }
+
+
+    @Override
+    public void run() {
+
+        for (int i = 1; i<= 10; i++){
+
+            double potencia = Math.pow((double) numero,(double)i);
+
+            System.out.println(Thread.currentThread().getName() + " " + numero + " ^ " + i + " = " + potencia);
+
+        }
 
     }
 }
